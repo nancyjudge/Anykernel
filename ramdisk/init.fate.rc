@@ -66,5 +66,5 @@ on property:init.svc.qcom-post-boot=stopped
     write /sys/block/mmcblk1/queue/read_ahead_kb 2048
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
 
-
-
+#FC
+    write /sys/kernel/fast_charge/force_fast_charge 0
