@@ -9,7 +9,7 @@ echo "0" > /dev/stune/background/schedtune.boost
 
 echo "0" > /dev/stune/foreground/schedtune.sched_boost
 echo "10" > /dev/stune/top-app/schedtune.sched_boost
-echo "0" > /dev/stune/background/schedtune.sched_boos
+echo "0" > /dev/stune/background/schedtune.sched_boost
 
 setprop dalvik.vm.heapminfree 2m
 
