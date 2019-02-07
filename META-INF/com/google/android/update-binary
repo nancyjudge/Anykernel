@@ -118,38 +118,6 @@ if [ $? != "0" ]; then
   abort;
 fi;
 
-
-if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.modules)" == 1 ]; then
-  mount -o rw,remount -t auto /system;
-  mount -o rw,remount -t auto /vendor 2>/dev/null;
-  cd /tmp/anykernel/modules;
-  for module in $(find . -name '*.ko'); do
-    case $module in
-      */system/*) modtarget=$root/$module;;
-      *) modtarget=/$module;;
-    esac;
-    if [ ! -e $modtarget ]; then
-      case $module in
-        */vendor/*) mod=vendor;;
-        *) mod=system;;
-      esac;
-    fi;
-    mkdir -p $(dirname $modtarget);
-    $bb cp -rLf $module $modtarget;
-    $bb chown 0:0 $modtarget;
-    $bb chmod 644 $modtarget;
-    if [ "$mod" ]; then
-      chcon "u:object_r:${mod}_file:s0" $modtarget;
-    fi;
-  done;
-  cd /tmp/anykernel;
-  mount -o ro,remount -t auto /system;
-  mount -o ro,remount -t auto /vendor 2>/dev/null;
-fi;
-
-cp -rLf /tmp/anykernel/modules/fstab.qcom /system/vendor/etc/fstab.qcom;
-chmod 644 /system/vendor/etc/fstab.qcom;
-
 debugging;
 
 if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.cleanup)" == 1 ]; then
