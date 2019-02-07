@@ -42,9 +42,6 @@ dump_boot;
 # init.rc
 insert_line init.rc 'fate' before 'on early-init' 'import /init.fate.rc';
 
-# zram
-insert_line fstab.qcom "/dev/block/zram0" after "/dev/block/bootdevice/by-name/config		/frp			emmc	defaults							defaults" "/dev/block/zram0                                        none                swap    defaults                    zramsize=536870912,max_comp_streams=2"
-
 # end ramdisk changes
 
 write_boot;

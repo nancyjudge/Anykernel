@@ -17,9 +17,9 @@ on init
     # Less throttling, more experience (GPU)
     # Adreno Idler
     write /sys/module/adreno_idler/parameters/adreno_idler_active 1
-    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 20
-    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 40
-    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 3000
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 10
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 30
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 2000
 	
     #GPU
     write /sys/class/devfreq/1c00000.qcom,kgsl-3d0/max_freq 650000000
@@ -41,7 +41,6 @@ on fs
 
 on property:sys.boot_completed=1
     write /sys/module/msm_hotplug/msm_enabled 1
-    swapon_all /system/vendor/etc/fstab.qcom
 
     # Set default profile on first boot
     exec u:r:init:s0 root root -- /init.fate.sh
@@ -72,15 +71,10 @@ on property:init.svc.qcom-post-boot=stopped
 #LMK
     chmod 666 /sys/module/lowmemorykiller/parameters/minfree
     chown root /sys/module/lowmemorykiller/parameters/minfree
-    write /sys/module/lowmemorykiller/parameters/minfree "9466,14199,28398,47330,66262,70995"
+    write /sys/module/lowmemorykiller/parameters/minfree "14540,21810,29080,36350,43620,50890"
 
 #MI
     write /sys/kernel/power_suspend/power_suspend_mode 1
 
-#ZRAM
-    write /sys/block/zram0/max_comp_streams 6
-    write /sys/block/zram0/disksize 534773760
-    write /sys/block/zram0/size 0
-
 #TH
-    write /sys/module/msm_thermal/parameters/enabled 1
+    write /sys/module/msm_thermal/parameters/enabled 0
