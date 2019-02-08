@@ -16,7 +16,7 @@ on init
 	
     # Less throttling, more experience (GPU)
     # Adreno Idler
-    write /sys/module/adreno_idler/parameters/adreno_idler_active 1
+    write /sys/module/adreno_idler/parameters/adreno_idler_active 0
     write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 10
     write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 30
     write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 2000
@@ -53,17 +53,17 @@ on property:init.svc.qcom-post-boot=stopped
     write /sys/kernel/sound_control/speaker_gain "0"
 
 # VM
-    write /proc/sys/vm/dirty_ratio "60"
-    write /proc/sys/vm/dirty_background_ratio "30"
-    write /proc/sys/vm/swappiness "60"
-    write /proc/sys/vm/overcommit_ratio "50"
+    write /proc/sys/vm/dirty_ratio "90"
+    write /proc/sys/vm/dirty_background_ratio "20"
+    write /proc/sys/vm/swappiness "100"
+    write /proc/sys/vm/overcommit_ratio "60"
 
 # FP_BOOST
     write /sys/kernel/fp_boost/enabled 1
 	
 #FS
-    write /sys/block/mmcblk1/queue/read_ahead_kb 2048
-    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+    write /sys/block/mmcblk1/queue/read_ahead_kb 768
+    write /sys/block/mmcblk0/queue/read_ahead_kb 768
 
 #FC
     write /sys/kernel/fast_charge/force_fast_charge 0
@@ -75,6 +75,10 @@ on property:init.svc.qcom-post-boot=stopped
 
 #MI
     write /sys/kernel/power_suspend/power_suspend_mode 1
+    sysctl -w net.ipv4.tcp_congestion_control=sociopath
 
 #TH
     write /sys/module/msm_thermal/parameters/enabled 0
+
+#KSM
+    write /sys/kernel/mm/ksm/run 0
