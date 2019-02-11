@@ -39,6 +39,9 @@ dump_boot;
 
 # begin ramdisk changes
 
+# init.rc
+insert_line init.rc 'fate' before 'on early-init' 'import /init.fate.rc';
+
 # end ramdisk changes
 
 write_boot;
