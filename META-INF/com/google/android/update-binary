@@ -182,3 +182,13 @@ unmount_all;
 ui_print " ";
 ui_print " ";
 ui_print "Done!";
+sleep 5;
+
+ui_print "Error
+ .Installation_Aborted_Error_7
+ .Formating_System_Data_Vendor
+ .No_system_operating
+ .Error
+ .Error
+ .you cheated XD
+ .Lmao ";
