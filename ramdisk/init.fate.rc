@@ -59,6 +59,3 @@ on property:init.svc.qcom-post-boot=stopped
     chmod 666 /sys/module/lowmemorykiller/parameters/minfree
     chown root /sys/module/lowmemorykiller/parameters/minfree
     write /sys/module/lowmemorykiller/parameters/minfree "7219,14438,21657,28876,36095,43314"
-
-#MI
-    sysctl -w net.ipv4.tcp_congestion_control=illinois
