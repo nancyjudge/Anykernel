@@ -13,7 +13,7 @@ on init
     #GPU
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 133330000
-    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 650000000
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 725000000
 	
 on fs
     mount_all ./fstab.qcom --early
