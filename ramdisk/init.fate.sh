@@ -3,7 +3,7 @@
 sysctl -e -w kernel.random.read_wakeup_threshold=64 2>/dev/null
 sysctl -e -w kernel.random.write_wakeup_threshold=128 2>/dev/null
 
-echo "0" > /dev/stune/foreground/schedtune.boost 
+echo "0" > /dev/stune/foreground/schedtune.boost
 echo "10" > /dev/stune/top-app/schedtune.boost
 echo "0" > /dev/stune/background/schedtune.boost
 

@@ -43,11 +43,11 @@ on property:sys.boot_completed=1
 on property:init.svc.qcom-post-boot=stopped
 
 # VM
-    write /proc/sys/vm/dirty_ratio "20"
+    write /proc/sys/vm/dirty_ratio "80"
     write /proc/sys/vm/dirty_background_ratio "5"
     write /proc/sys/vm/swappiness "80"
     write /proc/sys/vm/overcommit_ratio "50"
-    write /proc/sys/vm/vfs_cache_pressure "120"
+    write /proc/sys/vm/vfs_cache_pressure "20"
 
 #FS
     write /sys/block/mmcblk1/queue/read_ahead_kb 1024
