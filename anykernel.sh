@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string= KryPtoN KERNEL @Terlegram Channel
+kernel.string=Genom Kernel by rama982 @ telegram
 do.devicecheck=1
 do.modules=1
 do.cleanup=1
@@ -14,6 +14,7 @@ device.name2=
 device.name3=
 device.name4=
 device.name5=
+supported.versions=
 '; } # end properties
 
 # shell variables
@@ -30,7 +31,6 @@ ramdisk_compression=auto;
 ## AnyKernel file attributes
 # set permissions/ownership for included ramdisk files
 chmod -R 750 $ramdisk/*;
-chmod -R 755 $ramdisk/sbin;
 chown -R root:root $ramdisk/*;
 
 
@@ -38,10 +38,6 @@ chown -R root:root $ramdisk/*;
 dump_boot;
 
 # begin ramdisk changes
-
-# make schedutil default governor
-insert_line init.rc '# set governor' 'before' '# scheduler tunables' '# set governor'
-insert_line init.rc 'write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"' 'after' '# set governor' 'write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"'
 
 # end ramdisk changes
 
