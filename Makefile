@@ -1,8 +1,8 @@
-NAME ?= Genom
+NAME ?= KryPtoN
 
 DATE := $(shell date "+%Y%m%d-%H%M")
 
-CODE := MIUI-f2fs-vince
+CODE := MIUI-PWR
 
 ZIP := $(NAME)-$(CODE)-$(DATE).zip
 
