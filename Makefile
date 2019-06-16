@@ -2,7 +2,7 @@ NAME ?= Fate
 
 DATE := $(shell date "+%Y%m%d-%H%M")
 
-CODE := MIUI
+CODE := Memehui
 
 ZIP := $(NAME)-$(CODE)-$(DATE).zip
 
