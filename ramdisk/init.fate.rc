@@ -57,3 +57,7 @@ on property:init.svc.qcom-post-boot=stopped
     chmod 666 /sys/module/lowmemorykiller/parameters/minfree
     chown root /sys/module/lowmemorykiller/parameters/minfree
     write /sys/module/lowmemorykiller/parameters/minfree "7208,14416,21624,28832,36040,43248"
+
+#GPU BOOST
+    echo 400000000 > /sys/module/governor_msm_adreno_tz/parameters/boost_freq
+    echo 750 > /sys/module/governor_msm_adreno_tz/parameters/boost_duration
