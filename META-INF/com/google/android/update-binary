@@ -179,11 +179,5 @@ test "$savedpre" && export LD_PRELOAD="$savedpre";
 
 unmount_all;
 
-ui_print " ⁣                 /¯/)";
-ui_print " ⁣               /¯ ./";
-ui_print " ⁣              /. . /";
-ui_print "  ⁣         /´¯/' . '/´¯`";
-ui_print "   ⁣    /' /. ./ . ./ . ./¯\";
-ui_print " ⁣     ( . ( . ( . ( ¯ ./' . ')";
-ui_print " ⁣      \ . . . . . . . . . . ./"; 
+ui_print " ⁣                 Enjoy Bitch !!!		";
 ui_print "Done!";
