@@ -179,5 +179,6 @@ test "$savedpre" && export LD_PRELOAD="$savedpre";
 
 unmount_all;
 
-ui_print " ⁣                 Enjoy Bitch !!!		";
+ui_print "Enjoy bruh";
+ui_print "#AnjayFate";
 ui_print "Done!";
