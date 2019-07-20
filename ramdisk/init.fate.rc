@@ -43,7 +43,7 @@ on property:sys.boot_completed=1
 on property:init.svc.qcom-post-boot=stopped
 
 # VM
-    write /proc/sys/vm/dirty_ratio "80"
+    write /proc/sys/vm/dirty_ratio "40"
     write /proc/sys/vm/dirty_background_ratio "5"
     write /proc/sys/vm/swappiness "80"
     write /proc/sys/vm/overcommit_ratio "50"
