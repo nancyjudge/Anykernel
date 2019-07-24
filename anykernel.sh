@@ -9,11 +9,7 @@ do.devicecheck=1
 do.modules=0
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=redmi4a
-device.name2=rolex
-device.name3=redmi5a
-device.name4=riva
-device.name5=
+device.name1=vince
 '; } # end properties
 
 # shell variables
